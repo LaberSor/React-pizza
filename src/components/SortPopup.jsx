@@ -11,7 +11,8 @@ function SortPopup({ items }) {
   };
 
   const handleOutsideClick = (e) => {
-    if (!e.path.includes(sortRef.current)) setViziblePopup(false);
+    if (!e.path.includes(sortRef.current));
+    setViziblePopup(false);
   };
 
   React.useEffect(() => {
@@ -49,7 +50,7 @@ function SortPopup({ items }) {
                 <li
                   onClick={() => onSelectItem(index)}
                   className={activeItem === index ? 'active' : ''}
-                  key={`${obj.name}_${index}`}>
+                  key={`${obj.type}_${index}`}>
                   {obj.name}
                 </li>
               ))}
