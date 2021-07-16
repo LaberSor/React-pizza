@@ -3,11 +3,12 @@ import React from 'react';
 const SortPopup = React.memo(function SortPopup({ items }) {
   const [viziblePopup, setViziblePopup] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
-  const sortRef = React.useRef(null);
+  const sortRef = React.useRef();
   const activeLabel = items[activeItem].name;
 
   const toggleViziblePopup = () => {
-    setViziblePopup(!viziblePopup);
+    setViziblePopup(true);
+    console.log(viziblePopup);
   };
 
   const handleOutsideClick = (e) => {
