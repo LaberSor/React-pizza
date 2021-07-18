@@ -3,18 +3,22 @@ import React from 'react';
 const SortPopup = React.memo(function SortPopup({ items }) {
   const [viziblePopup, setViziblePopup] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
-  const sortRef = React.useRef();
+  const sortRef = React.useRef(null);
   const activeLabel = items[activeItem].name;
 
   const toggleViziblePopup = () => {
-    setViziblePopup(true);
-    console.log(viziblePopup);
+    setViziblePopup(!viziblePopup);
   };
 
   const handleOutsideClick = (e) => {
-    if (!e.path.includes(sortRef.current));
-    setViziblePopup(false);
+    if (!e.path.includes(sortRef.current)) {
+      setViziblePopup(false);
+    }
   };
+
+  React.useEffect(() => {
+    console.log(viziblePopup);
+  }, [viziblePopup]);
 
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
