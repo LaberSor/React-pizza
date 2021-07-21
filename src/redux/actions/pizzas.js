@@ -1,8 +1,14 @@
 import axios from 'axios';
 
+export const setLoaded = (value) => ({
+    type: 'SET_LOADED',
+    payload: value
+})
+
 export const fetchPizzas = () => (dispatch) => {
-   axios.get('http://localhost:3001/pizzas').then(({ data }) => {
-      dispatch(setPizzas(data));
+    dispatch(setLoaded(false));
+    axios.get('http://localhost:3001/pizzas').then(({ data }) => {
+        dispatch(setPizzas(data));
     });
 };
 

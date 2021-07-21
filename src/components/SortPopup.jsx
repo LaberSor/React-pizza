@@ -16,9 +16,9 @@ const SortPopup = React.memo(function SortPopup({ items }) {
     }
   };
 
-  React.useEffect(() => {
+  /* React.useEffect(() => {
     console.log(viziblePopup);
-  }, [viziblePopup]);
+  }, [viziblePopup]); */
 
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
