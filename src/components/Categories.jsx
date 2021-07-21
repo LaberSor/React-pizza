@@ -5,6 +5,11 @@ const Categories = React.memo(function Categories({ activeCategory, items, onCli
   return (
     <div className="categories">
       <ul>
+        <li
+          className={activeCategory === null ? 'active' : ''}
+          onClick={() => onClickCategory(null)}>
+          Все
+        </li>
         {items &&
           items.map((name, index) => (
             <li
@@ -26,7 +31,7 @@ Categories.propTypes = {
 };
 
 Categories.defaultProps = {
-  activeCategory: 0,
+  activeCategory: null,
   items: [],
 };
 
