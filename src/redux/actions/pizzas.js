@@ -3,7 +3,7 @@ import axios from 'axios';
 export const setLoaded = (value) => ({
     type: 'SET_LOADED',
     payload: value
-})
+});
 
 export const fetchPizzas = (sortBy, category) => (dispatch) => {
     dispatch(setLoaded(false));
